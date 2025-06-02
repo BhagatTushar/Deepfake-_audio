@@ -41,7 +41,7 @@ class Attention(tf.keras.layers.Layer):
         context_vector = attention_weights * inputs
         return tf.keras.backend.sum(context_vector, axis=1)
 
-model_path = "deepfake_model.h5"
+model_path = "Model/deepfake_model.h5"
 model = tf.keras.models.load_model(model_path, custom_objects={"Attention": Attention})
 
 # ✅ Function to extract MFCC features
