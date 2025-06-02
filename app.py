@@ -83,4 +83,4 @@ def predict_audio():
     return jsonify({"prediction": result, "confidence": round(float(confidence), 2)})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
